@@ -1,4 +1,4 @@
-from ispeak_strategy import ISpeakStrategy
+from StrategyPattern.SpeakStrategies.ispeak_strategy import ISpeakStrategy
 
 
 class Squeak(ISpeakStrategy):

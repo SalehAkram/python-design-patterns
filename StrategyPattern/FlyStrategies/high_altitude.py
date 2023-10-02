@@ -1,4 +1,4 @@
-from ifly_strategy import IFlyStrategy
+from StrategyPattern.FlyStrategies.ifly_strategy import IFlyStrategy
 
 
 class HighAltitude(IFlyStrategy):
