@@ -25,15 +25,29 @@ from StateMachine.state_machine import StateMachine
 #     elif choice.lower() == "e":
 #         state_machine.eject_card()
 
-from Factory.gladiators import GladiatorFactory
-choice = input("m or r\n").lower()
-g_factory = GladiatorFactory().get_factory(choice)
+# from Factory.gladiators import GladiatorFactory
+# choice = input("m or r\n").lower()
+# g_factory = GladiatorFactory().get_factory(choice)
+#
+# weapon = g_factory.create_weapon()
+# shield = g_factory.create_shield()
+#
+# print(weapon.use_weapon())
+# print(shield.use_shield())
 
-weapon = g_factory.create_weapon()
-shield = g_factory.create_shield()
-
-print(weapon.use_weapon())
-print(shield.use_shield())
+from Observer.subjects import NewScientist, WorldSoccer
+from Observer.observer import Saleh, Maryam
+maryam = Maryam()
+saleh = Saleh()
+ns = NewScientist()
+ns.attach(maryam)
+ns.attach(saleh)
+ns.notify()
+ns.detach(maryam)
+ns.notify()
+ws = WorldSoccer()
+ws.attach(maryam)
+ws.notify()
 
 
 
