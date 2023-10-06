@@ -1,3 +1,4 @@
+
 from StrategyPattern.dog import Dog
 from StrategyPattern.eagle import Eagle
 from StateMachine.state_machine import StateMachine
@@ -35,19 +36,34 @@ from StateMachine.state_machine import StateMachine
 # print(weapon.use_weapon())
 # print(shield.use_shield())
 
-from Observer.subjects import NewScientist, WorldSoccer
-from Observer.observer import Saleh, Maryam
-maryam = Maryam()
-saleh = Saleh()
-ns = NewScientist()
-ns.attach(maryam)
-ns.attach(saleh)
-ns.notify()
-ns.detach(maryam)
-ns.notify()
-ws = WorldSoccer()
-ws.attach(maryam)
-ws.notify()
+# from Observer.subjects import NewScientist, WorldSoccer
+# from Observer.observer import Saleh, Maryam
+# maryam = Maryam()
+# saleh = Saleh()
+# ns = NewScientist()
+# ns.attach(maryam)
+# ns.attach(saleh)
+# ns.notify()
+# ns.detach(maryam)
+# ns.notify()
+# ws = WorldSoccer()
+# ws.attach(maryam)
+# ws.notify()
+
+from Adapter.soldiers import Rambo, Robocop, SoldierRobotAdapter
+
+soldiers = []
+rambo = Rambo()
+robo = Robocop()
+soldier_robot_adapter = SoldierRobotAdapter(robo)
+
+soldiers.append(rambo)
+soldiers.append(soldier_robot_adapter)
+
+for soldier in soldiers:
+    soldier.step_back()
+    soldier.rush_forward()
+    soldier.attack()
 
 
 
